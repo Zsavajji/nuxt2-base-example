@@ -56,6 +56,7 @@
   .has-scroll-smooth {
     body {
       overflow: hidden;
+      color: #fafafa;
     }
 
     .js-locomotive {

@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    // Vetur - Vue tooling for VS Code
+    "octref.vetur",
+    // ESLint - Integrates ESLint JavaScript into VS Code.
+    "dbaeumer.vscode-eslint",
+    // Disable eslint rule - Disable eslint rule with one click.
+    "wooodhead.disable-eslint-rule",
+    // stylelint - Modern CSS/SCSS/Less linter
+    "stylelint.vscode-stylelint",
+    // EditorConfig for VS Code - EditorConfig Support for Visual Studio Code
+    "editorconfig.editorconfig",
+    // DotENV - Support for dotenv file syntax.
+    "mikestead.dotenv",
+    // Import Cost - Display import/require package size in the editor
+    "wix.vscode-import-cost"
+  ]
+}
