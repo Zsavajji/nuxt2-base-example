@@ -1,0 +1,72 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "standard",
+    "plugin:vue/recommended",
+    "plugin:nuxt/recommended"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "allowImportExportEverywhere": false
+  },
+  "rules": {
+    "indent": [
+      "warn",
+      2,
+      { "SwitchCase": 1 }
+    ],
+    "comma-dangle": ["error", "never"],
+    "array-element-newline": [ "error", {
+        "multiline": true,
+        "minItems": 2
+      }
+    ],
+    "array-bracket-newline": [ "error", {
+        "multiline": true,
+        "minItems": 2
+      }
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "always"
+    ],
+    "eqeqeq": "off",
+    "camelcase": "off",
+    "eol-last": "off",
+    "no-extra-boolean-cast": "off",
+    "quote-props": [
+      "warn",
+      "consistent"
+    ],
+    "vue/component-name-in-template-casing": [
+      "warn",
+      "kebab-case"
+    ],
+    "vue/attributes-order": "error",
+    "vue/use-v-on-exact": "off",
+    "vue/prop-name-casing": "warn",
+    "vue/require-default-prop": "off",
+    "vue/html-closing-bracket-newline": "off",
+    "vue/no-v-html": "off",
+    "vue/html-self-closing": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "indent": "off",
+        "vue/script-indent": [
+          "warn",
+          2,
+          { "baseIndent": 1 }
+        ]
+      }
+    }
+  ]
+}
