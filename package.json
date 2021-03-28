@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.13.12",
     "core-js": "^3.9.1",
     "eslint-plugin-nuxt": "^2.0.0",
     "locomotive-scroll": "^4.1.1",
