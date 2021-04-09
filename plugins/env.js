@@ -1,4 +1,4 @@
 export default (context, inject) => {
-  inject('env', process.env.appEnv)
-  inject('isDevelopment', process.env.appEnv === 'development')
+  inject('env', process.env.currentEnv)
+  inject('isDevelopment', process.env.currentEnv === 'development')
 }

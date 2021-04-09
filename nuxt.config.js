@@ -1,9 +1,11 @@
 const env = process.env.NODE_ENV || 'development'
 
 export default {
-  ssr: false,
+  ssr: true,
   target: 'static',
-  components: true,
+  components: {
+    loader: true
+  },
   modern: env !== 'development',
   env: {
     currentEnv: env

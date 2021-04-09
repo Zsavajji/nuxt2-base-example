@@ -5,36 +5,36 @@
 </template>
 
 <script>
-  import LocomotiveScroll from 'locomotive-scroll'
-
+  import VueTypes from 'vue-types'
   export default {
     name: 'LocomotiveScroll',
     props: {
-      options: {
-        type: Object,
-        default: () => {}
+      options: VueTypes.object.def(() => {})
+    },
+    created () {
+      if (process.client) {
+        const { default: _LocomotiveScroll } = require('locomotive-scroll')
+        this._LocomotiveScroll = _LocomotiveScroll
       }
+    },
+    mounted () {
+      this.locomotive = new this._LocomotiveScroll({
+        el: this.$el,
+        ...this.options
+      })
+
+      this.$emit('init')
     },
     beforeDestroy () {
       this.locomotive?.destroy()
       this.locomotive = undefined
     },
     methods: {
-      init () {
-        this.locomotive = new LocomotiveScroll({
-          el: this.$el,
-          ...this.options
-        })
-
-        this.$emit('init')
-        console.log('Locomotive inserted!')
-      },
       refreshScroll () {
         this.locomotive.destroy()
         this.locomotive.init()
 
         this.handleEvents()
-        console.log('Locomotive refreshed!')
       },
       handleEvents () {
         this.locomotive.on('scroll', ev => {
@@ -51,7 +51,7 @@
 </script>
 
 <style lang="scss">
-  @import '~locomotive-scroll/dist/locomotive-scroll.css';
+  @import 'locomotive-scroll/dist/locomotive-scroll.css';
 
   .has-scroll-smooth {
     body {
